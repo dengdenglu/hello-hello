@@ -1,0 +1,44 @@
+#include<iostream>
+#include<cmath>
+#include<cstdio>
+#include<string.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    for(int i=0;i<n;i++)
+    {
+        double a;
+        int b;
+        cin>>a>>b;
+        double str[b],str3[b];;
+        double c=a/2;
+        int p=0,q=0;
+        double dis1,dis2;
+        for(int j=0;j<b;j++)
+        {
+            cin>>str[j];
+            str3[j]=fabs(str[j]-c);
+        }
+        double max=str3[0],min=str3[0];
+        for(int j=0;j<b;j++)
+        {
+            if(max<str3[j])
+            {
+                max=str3[j];
+                p=j;
+            }
+            if(min>str3[j])
+            {
+                min=str3[j];
+                q=j;
+            }
+        }
+        if(str[q]<=c){dis1=str[q];}
+        else{dis1=a-str[q];}
+        if(str[p]<=c){dis2=a-str[p];}
+        else{dis2=str[p];}
+        cout<<dis1<<" "<<dis2<<endl;
+    }
+}
